@@ -1,0 +1,25 @@
+<% include head.ejs %>
+<body class="container">
+<% include header.ejs %>
+<img src="https://images.unsplash.com/photo-1546443046-ed1ce6ffd1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+	 alt="header" height="300" width="100%">
+<div class="row justify-content-center">
+	<div class="col-8">
+		<h2>You can contact with me.</h2>
+		<h5>Use this form please and send email to me.</h5>
+		<form>
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email address</label>
+				<input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp"
+					   placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Your name</label>
+				<input type="text" class="form-control" name="name" id="exampleInputPassword1" placeholder="Your name">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>
+</body>
+<% include footer.ejs %>
