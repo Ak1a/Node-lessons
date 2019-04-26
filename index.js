@@ -6,26 +6,25 @@ let urlencondedParser = bodyParser.urlencoded({ extended: false });
 let DBWorker = require('./connetc-to-db');
 const db = new DBWorker();
 
-app.use(session({ secret: 'ssshhhhh' }));
+app.use(session({ secret: 'ssshhhs' }));
 app.set('view engine', 'ejs');
 
 let sess;
 
 app.get('/', (req, res) => {
 
-  db.collectionPosts.find().toArray((err, posts) => {
+  db.getPosts().then( posts => {
     res.render('home', { posts: posts });
-  })
-
+  });
+  
 });
 
 app.get('/post/:id', function (req, res) {
 
   if (req.params.id) {
-    db.collectionPosts.find().toArray((err, posts) => {
-
+    db.getPosts().then( posts => {
       res.render('page', { post: posts[req.params.id] });
-    })
+    });
   } else {
     res.status(404);
   }

@@ -25,6 +25,10 @@ class DBWorker {
     });
   }
 
+  async getPosts(){
+    return await this.collectionPosts.find().toArray();
+  }
+
   insertOnePost(post) {
 
     this.collectionPosts.insertOne(post, (err, result) => {
